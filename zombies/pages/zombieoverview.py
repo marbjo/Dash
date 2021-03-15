@@ -26,8 +26,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
 df = pd.DataFrame({
-    "Sales" : ["Web", "Store", "Referral", "Post"],
-    "Amount" : [400,300,100,200]
+    "Sales" : ["Family", "Straggler", "Zombie mob", "Ingesting"],
+    "Amount" : [748,321,150,68]
 })
 
 df2 = pd.DataFrame({
@@ -41,22 +41,6 @@ fig = px.bar(df, x="Sales", y="Amount") #, color="Amount", barmode="group")
 fig2 = px.pie(df2, values='Amount', names='State')
 
 
-# #Table
-# df3 = pd.read_csv('https://gist.githubusercontent.com/chriddyp/c78bf172206ce24f77d6363a2d754b59/raw/c353e8ef842413cae56ae3920b8fd78468aa4cb2/usa-agricultural-exports-2011.csv')
-#
-# def generate_table(dataframe, max_rows=10):
-#     return html.Table([
-#         html.Thead(
-#             html.Tr([html.Th(col) for col in dataframe.columns])
-#         ),
-#         html.Tbody([
-#             html.Tr([
-#                 html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
-#             ]) for i in range(min(len(dataframe), max_rows))
-#         ])
-#     ])
-
-
 def create_layout(app):
     # Page layouts
     return html.Div(
@@ -65,15 +49,15 @@ def create_layout(app):
             # page 1
             html.Div(
                 [
-                    html.H1(children='2100 in numbers', style={'textAlign': 'center', 'color': 'black', 'font-weight': 'bold'}),
-                    html.H2(children='Where are we now, and where we are going.', style={'textAlign': 'center', 'color': 'black'}),
-
+                    html.H1(children='Zombie numbers', style={'textAlign': 'center', 'color': 'black', 'font-weight': 'bold'}),
                     # Row 2
                     html.Div([
                         #One Div with className='six columns'
                         html.Div([
-                            html.H3(children='Distribution of sales from our different outlets'),
-                            html.Div(children='Web sales continues to be the dominating factor, and are expected to increase their share of sales even more in the future.'), #, style={'textAlign': 'center', 'color': 'magenta'}),
+                            html.H3(children='Source of contamination', style={'color': 'Green'}),
+                            html.H6(children='An overwhelming amount of spread stems from not wanting to leave infected familiy\
+                            members behind. Few get infected by large mobs, as they often announce their arrival and are easier to spot.\
+                            A few unfortunate souls still have not heeded the warning of not eating zombie meat.', style={'textAlign': 'center', 'color': 'black'}),
                             dcc.Graph(
                                 id='graph1',
                                 figure=fig
@@ -81,8 +65,8 @@ def create_layout(app):
                         ], className='six columns'),
                         #Another Div with className='six columns'
                         html.Div([
-                            html.H3(children='The Zombie apocalypse in numbers'),
-                            html.Div(children='We are heading for dark times, as the number of alive humans is expected to sharply decline in the forseeable future.'), #, style={'textAlign': 'center', 'color': 'magenta'}),
+                            html.H3(children='Percentage of outcome', style={'color': 'Green'}),
+                            html.H6(children='We are heading for dark times, as the number of alive humans is expected to sharply decline in the forseeable future.'), #, style={'textAlign': 'center', 'color': 'magenta'}),
                             dcc.Graph(
                                 id='graph2',
                                 figure=fig2
@@ -93,9 +77,9 @@ def create_layout(app):
                     #Row 3
                     html.Div([
                         html.Div([
-                            html.H5("Brain", style={'color' : 'white', 'marginLeft': 20, 'marginRight': 20}),
+                            html.H5("Goal", style={'color' : 'white', 'marginLeft': 20, 'marginRight': 20}),
                             #html.Br([]),
-                            html.P('The zombies seem to prefer to eat the brain.'
+                            html.P('The zombies seem to be mostly focused on eating your brain.'
                             ,style={'color': 'white', 'marginLeft': 20, 'marginRight': 20}),
                         ],className='three columns', style={'backgroundColor': 'darkRed'}),
                         html.Div([

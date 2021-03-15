@@ -18,7 +18,7 @@ PATH = pathlib.Path(__file__) #.parent
 DATA_PATH = PATH.joinpath("../data").resolve()
 
 df = pd.read_csv(DATA_PATH.joinpath('pop.csv'))
-x = 20 #First 20 cities in the dataframe
+x = 26 #First x cities in the dataframe
 
 # initialise
 map = Basemap(llcrnrlon=3, llcrnrlat=57, urcrnrlon=30,urcrnrlat=72., lat_0 = 60., lon_0 = 9, projection='merc', resolution='h') #Default projection is cyl

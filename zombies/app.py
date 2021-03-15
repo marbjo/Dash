@@ -25,7 +25,7 @@ app.layout = html.Div(
 def display_page(pathname):
     if pathname == "/zombies/zombie-future":
         return zombiefuture.create_layout(app)
-    elif pathname == "/zombies/zombie-geography":
+    elif pathname == "/zombies/zombie-density":
         return zombiegeography.create_layout(app)
     # elif pathname == "/dash-financial-report/fees":
     #     return feesMins.create_layout(app)

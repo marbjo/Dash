@@ -14,7 +14,7 @@ def get_header(app):
                     html.Img(
                         src=app.get_asset_url("zombie2.jpg"),
                         className="logo",
-                        style={'width': '5%', 'height': '5%'}
+                        style={'width': '8%', 'height': '8%'}
                         ),
                     # html.A(
                     #     html.Button("Learn More", id="learn-more-button"),
@@ -54,7 +54,7 @@ def get_menu():
         [
             dcc.Link(
                 "Overview",
-                href="/zombies/zombieoverview",
+                href="/zombies/zombie-overview",
                 className="tab first",
             ),
             dcc.Link(
@@ -63,8 +63,8 @@ def get_menu():
                 className="tab",
             ),
             dcc.Link(
-                "Zombie geography",
-                href="/zombies/zombie-geography",
+                "Zombie density",
+                href="/zombies/zombie-density",
                 className="tab",
             ),
             # dcc.Link(
