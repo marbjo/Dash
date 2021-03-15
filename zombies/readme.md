@@ -11,9 +11,3 @@ The app incorporates custom local and external CSS to display distinct pages for
 - [Plotly Python](https://plot.ly/python/) - Used to create the interactive plots
 
 The following are screenshots for the app in this repo:
-
-![animated](screenshots/dash-financial-report-demo.gif)
-
-![screenshot](screenshots/report-screenshot.png)
-
-![screenshot](screenshots/report-interactive.png)
